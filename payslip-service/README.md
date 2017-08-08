@@ -36,5 +36,5 @@ Used hsql as a DB and the application starts with initial data according to data
  
  mvn test
 
-Now when you visit **http://localhost:8080** from your web browser you will be able to use the application Upload csv and export. 
+Now when you visit **http://localhost:8080** from your web browser you will be able to use the application upload csv and export. 
 
