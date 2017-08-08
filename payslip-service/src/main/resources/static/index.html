@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+    <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <html class="no-js"> <!--<![endif]-->
+    <head>
+
+    <!-- Meta-Information -->
+    <title>Payslip</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Pay Slip Exporter">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+       
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+   	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+   	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+   	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+    <script src="bower_components/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+
+   	<script src="js/main.js"></script>
+   	<script src="js/csvExporterController.js"></script>
+   	<script src="js/taxRateController.js"></script>
+   	<script src="js/payslipService.js"></script>
+   	<script src="js/taxRateService.js"></script>
+    
+        
+
+    </head>
+    <body ng-app="payslipWebApp">
+    <div ng-include='"header.html"'></div>
+    <div ng-view></div>
+
+
+
+</body>
+</html>
+
+

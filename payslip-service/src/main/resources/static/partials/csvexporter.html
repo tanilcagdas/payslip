@@ -1,0 +1,13 @@
+
+<div id="main-content" class="container">
+	<div>
+		<input type="file" file-reader="fileContent" />
+		<div>{{fileContent}}</div>
+	</div>
+
+	<div ng-if="fileContent != undefined">
+		<a href="" ng-click="exportToCSV()" class="a-search-export">Export
+			to CSV </a>
+	</div>
+
+</div>
