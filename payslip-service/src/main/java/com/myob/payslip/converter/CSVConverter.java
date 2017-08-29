@@ -9,16 +9,22 @@ public class CSVConverter {
 	
 	private String SINGLE_SPACE = " ";
 
-	private static final String CSV_HEADERS = "NAME\tPAY_PERIOD\tGROSS_INCOME\tINCOME_TAX\tNET_INCOME\tSUPER\n";
+	public static final String CSV_HEADERS = "NAME\tPAY_PERIOD\tGROSS_INCOME\tINCOME_TAX\tNET_INCOME\tSUPER\n";
 
 	private static final String SEPERATOR = "\t";
 	
 	public static final String NEXT_LINE = "\n";
 
 	public String convert(Payslip payslip) {
-		StringBuilder csvBuilder = new StringBuilder(CSV_HEADERS);
+		StringBuilder csvBuilder = getHeaderCSV();
 		fillCsv(csvBuilder, payslip);
 		return csvBuilder.toString();
+	}
+
+
+	private StringBuilder getHeaderCSV() {
+		StringBuilder csvBuilder = new StringBuilder();
+		return csvBuilder;
 	}
 	
 

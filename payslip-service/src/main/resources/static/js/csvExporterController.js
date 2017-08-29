@@ -8,25 +8,30 @@ app.controller('csvExporterCtrl', [
 
 			$scope.exportToCSV = function() {
 				let lines = $scope.fileContent.split('\n');
-				for ( var i in lines) {
-					exportSingleLine(lines[i]);
-				}
+				exportSingleLine(lines);
 			}
 			
-			function exportSingleLine(line){
-				let split = line.split(',');
-				if(split.length != 5){
-					alert("not valid csv")
-				}
-				let employee = {
-						"firstName": split[0],
-						"lastName" : split[1],
-						"annualSalary" :split[2]
-				}
-				let superRatio = split[3].replace('%','')
-				let requestDates = split[4]
-				res = PayslipService.exportPayslip(employee, superRatio,
-						requestDates);
+			function exportSingleLine(lines){
+				let employees = [];
+				var lines = lines.map(function(line){
+					
+					let split = line.split(',');
+					if(split.length != 5){
+						console.log("not valid csv");
+						return null;
+					}
+					let employee = {
+							"firstName": split[0],
+							"lastName" : split[1],
+							"annualSalary" :split[2],
+					        "superRatio" : split[3].replace('%',''),
+					        "requestDates" : split[4]
+					}
+					employees.push(employee);
+				});
+				let body = {"employees":employees}
+				
+				res = PayslipService.exportPayslip(body);
 				res.then(function(response) {
 					saveFile(response.data, "payslip.csv");
 				}, function errorCallback(response) {

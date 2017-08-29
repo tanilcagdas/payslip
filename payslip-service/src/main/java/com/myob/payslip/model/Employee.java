@@ -15,6 +15,24 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private int annualSalary;
+	private Double superRatio;
+	private String requestDates;
+
+	public Double getSuperRatio() {
+		return superRatio;
+	}
+
+	public void setSuperRatio(Double superRatio) {
+		this.superRatio = superRatio;
+	}
+
+	public String getRequestDates() {
+		return requestDates;
+	}
+
+	public void setRequestDates(String requestDates) {
+		this.requestDates = requestDates;
+	}
 
 	public String getFirstName() {
 		return firstName;
